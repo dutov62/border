@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Контакты - ООО «БОРДЕР»</title>
+	<link rel="shortcut icon" href="img/logo.png" type="img/png">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>ООО «БОРДЕР»</h1>
+        <nav>
+          <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+            <li><a href="products.html">Продукция</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="contact-info" class="container">
+        <div class="contact-content">
+          <h2>Контакты</h2>
+          <div class="info-column">
+            <div class="info-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <p>390046, Россия, Рязань, ул. Маяковского, 1А, пом. 1</p>
+              <i class="fas fa-phone"></i>
+			  <p>Контактный телефон:</p>
+              <p><a href="tel:+78007001428">8 800 700 14 28</a></p>
+              <i class="fas fa-phone"></i>
+			  <p>Продукция для входных дверей:</p>
+              <p><a href="tel:+74912778918">+7 (4912) 77-89-18</a></p>
+              <i class="fas fa-phone"></i>
+			  <p>Продукция для межкомнатных дверей:</p>
+              <p><a href="tel:+74912779018">+7 (4912) 77-90-18</a></p>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-envelope"></i>
+              <p><a href="mailto:borderlock@yandex.ru">borderlock@yandex.ru</a></p>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-globe"></i>
+              <p>Сайт: <a href="https://borderlocks.ru/">borderlocks.ru</a></p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="map" class="container">
+        <h2>Наше местоположение</h2>
+        <div id="yandex-map" style="width: 100%; height: 600px;"></div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>© 2024 ООО «БОРДЕР»</p>
+      </div>
+    </footer>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <script type="text/javascript">
+      ymaps.ready(init);
+      function init() {
+        var myMap = new ymaps.Map("yandex-map", {
+          center: [54.614028, 39.755518], // Замени на координаты твоего места
+          zoom: 16, //  Масштаб карты (14 - средний)
+        });
+        var myPlacemark = new ymaps.Placemark(
+          [54.614028, 39.755518], // Замени на координаты твоего места
+          {
+            hintContent: "ООО «БОРДЕР»",
+            balloonContent: "ул. Примерная, д. 1, г. Москва",
+          }
+        );
+        myMap.geoObjects.add(myPlacemark);
+      }
+    </script>
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit-id.js" crossorigin="anonymous"></script>
+  </body>
+</html>
